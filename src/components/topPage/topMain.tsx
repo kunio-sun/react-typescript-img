@@ -1,4 +1,5 @@
-import React, { FC } from "react";
+//hooksからuseState(入力キーワド保持)をimport
+import React, { FC, useState } from "react";
 import { createStyles, makeStyles } from "@material-ui/core/styles";
 import pencil from "../../asets/images/pencil.jpg";
 //material UI paper
@@ -37,6 +38,15 @@ const TopMain: FC = () => {
   // useStyle 関数を classesに格納しcomponentの中で使用可に
   const classes = useStyle();
 
+  //const [値を保持する変数, 変数の値を変える関数] = useState(初期値);
+  const [keyword, setKeyword] = useState("");
+  //keywordに検索窓のvalueを格納
+  //handleChange関数の引数は react.・・・InputElement>型のeventになる
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    // console.log(event.target.value);
+    setKeyword(event.target.value);
+  };
+
   return (
     <>
       <div className={classes.background}>
@@ -47,6 +57,7 @@ const TopMain: FC = () => {
           <InputBase
             placeholder="検索する文字列を入力してください"
             className={classes.inputbase}
+            onChange={handleChange}
           />
         </Paper>
       </div>
