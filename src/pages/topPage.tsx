@@ -4,15 +4,17 @@ import React, { FC } from "react";
 //defaultでimportされる物には{}をつけない
 //defaultでimportされない物には{}をつける
 
+// headerコンポーネント
+import TopHeader from "../components/topPage/topHeader";
+
 // functional component の定義
 // const 変数名:FC = () =>{
 //   return(コンポーネントの中身)
 // }
-
 const TopPage: FC = () => {
   return (
     <>
-      <h2>reactコンポーネントだよ</h2>
+      <TopHeader />
     </>
   );
 };
