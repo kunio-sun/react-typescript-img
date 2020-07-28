@@ -6,6 +6,8 @@ import React, { FC } from "react";
 
 // headerコンポーネント
 import TopHeader from "../components/topPage/topHeader";
+// mainコンポーネント
+import TopMain from "../components/topPage/topMain";
 
 // functional component の定義
 // const 変数名:FC = () =>{
@@ -15,6 +17,7 @@ const TopPage: FC = () => {
   return (
     <>
       <TopHeader />
+      <TopMain />
     </>
   );
 };
