@@ -9,16 +9,29 @@ import TopHeader from "../components/topPage/topHeader";
 // mainコンポーネント
 import TopMain from "../components/topPage/topMain";
 
+//asでbrouserRouterをrouterとして扱う宣言
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
 // functional component の定義
 // const 変数名:FC = () =>{
 //   return(コンポーネントの中身)
 // }
 const TopPage: FC = () => {
   return (
-    <>
-      <TopHeader />
-      <TopMain />
-    </>
+    <Router>
+      <Switch>
+        {/* pathが/ 最初のページはtopHeaderとTopMainを使う*/}
+        <Route exact path="/">
+          <TopHeader />
+          <TopMain />
+        </Route>
+      </Switch>
+
+      {/* パスが/seach/:keywordなら、このタグ内の値を表示 */}
+      <Route path="/seach/:keyword" exact>
+        検索結果
+      </Route>
+    </Router>
   );
 };
 

@@ -9,6 +9,8 @@ import SeachIcon from "@material-ui/icons/Search";
 import IconButton from "@material-ui/core/IconButton";
 //文字を打ち込むinput base
 import InputBase from "@material-ui/core/InputBase";
+//ページ遷移させるreact router dom
+import { useHistory } from "react-router-dom";
 
 const useStyle = makeStyles(() =>
   createStyles({
@@ -47,10 +49,21 @@ const TopMain: FC = () => {
     setKeyword(event.target.value);
   };
 
+  const history = useHistory();
+  // component="form" と onSubmit={handeleSubmit}で発火
+  const handleSubmit = () => {
+    //現在のurlに/seach/入力されたキーワドを付け足す
+    history.push("/seach/" + keyword);
+  };
+
   return (
     <>
       <div className={classes.background}>
-        <Paper className={classes.paper}>
+        <Paper
+          className={classes.paper}
+          component="form"
+          onSubmit={handleSubmit}
+        >
           <IconButton type="submit">
             <SeachIcon />
           </IconButton>
