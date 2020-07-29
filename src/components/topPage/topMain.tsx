@@ -49,11 +49,12 @@ const TopMain: FC = () => {
     setKeyword(event.target.value);
   };
 
+  // ページ遷移
   const history = useHistory();
   // component="form" と onSubmit={handeleSubmit}で発火
   const handleSubmit = () => {
     //現在のurlに/seach/入力されたキーワドを付け足す
-    history.push("/seach/" + keyword);
+    history.push(`/search/${keyword}`);
   };
 
   return (

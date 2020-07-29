@@ -28,7 +28,7 @@ const TopPage: FC = () => {
       </Switch>
 
       {/* パスが/seach/:keywordなら、このタグ内の値を表示 */}
-      <Route path="/seach/:keyword" exact>
+      <Route path="/search/:keyword" exact>
         検索結果
       </Route>
     </Router>
