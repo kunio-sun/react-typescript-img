@@ -69,7 +69,7 @@ const ImageItemList: FC = () => {
     //snapshot.docsには検索ワードが含まれるドキュメントが全て入る
     //map(() =>{})で配列を繰り返す
     snapShot.docs.map((doc) => {
-      temporaryData.push(doc.data());
+      return temporaryData.push(doc.data());
     });
 
     //ImageItemListコンポーネント全体でtemporaryDataを使える様に
@@ -85,7 +85,7 @@ const ImageItemList: FC = () => {
     //keywordを引数としてgetDate()を発動
     getData(keyword);
     //,[]でuseeffectの記述が更新されても呼び出されず最初だけ呼ばれる
-  }, []);
+  }, [keyword]);
 
   return (
     <div className={classes.root}>
