@@ -13,6 +13,10 @@ const useStyles = makeStyles(() =>
     tileImage: {
       height: "436px",
       width: "436px"
+    },
+    main: {
+      textAlign: "center",
+      margin: "5%",
     }
   })
 );
@@ -101,8 +105,10 @@ const DownloadPage: FC = () => {
   return (
     <div>
       <TopHeader />
-      {displayImage()}
-      {downloadButton()}
+      <div className={classes.main}>
+        {displayImage()}
+        {downloadButton()}
+      </div>
 
     </div>
   )
