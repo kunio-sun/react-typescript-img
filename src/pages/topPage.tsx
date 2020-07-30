@@ -14,6 +14,8 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 //resultpage
 import ResultPage from "./resultPage";
 
+import DownloadPage from "./downloadPage"
+
 const TopPage: FC = () => {
   return (
     <BrowserRouter>
@@ -28,6 +30,11 @@ const TopPage: FC = () => {
       {/* パスが/seach/:keywordなら、このタグ内の値を表示 */}
       <Route path="/search/:keyword" exact>
         <ResultPage />
+      </Route>
+
+      {/* urlが/download/なんらかのキーワド　の場合downloadPageを表示 */}
+      <Route path="/download/:keyword" exact>
+        <DownloadPage />
       </Route>
     </BrowserRouter>
   );
